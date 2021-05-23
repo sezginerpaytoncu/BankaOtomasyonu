@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include<conio.h> //getch() fonksiyonu için kullanılmıştır.
-#include<Windows.h> //Sleep() ve system("CLS") fonksiyonları için kullanıldı
-#include<string.h> //strcmp karşılaştırma fonksiyonu için kullanıldı
+#include<conio.h> //getch() fonksiyonu iÃ§in kullanÄ±lmÄ±ÅŸtÄ±r.
+#include<Windows.h> //Sleep() ve system("CLS") fonksiyonlarÄ± iÃ§in kullanÄ±ldÄ±
+#include<string.h> //strcmp karÅŸÄ±laÅŸtÄ±rma fonksiyonu iÃ§in kullanÄ±ldÄ±
 
 struct HesapBilgileri{
 	char ad[15];
@@ -17,16 +17,16 @@ void VeritabaniGuncelle(struct HesapBilgileri *);
 
 void main(){ 
 	int yatanPara,cekilenPara,gonderilenPara;
-	int k; //switch-case yapısı için tanımlanmıştır.
-	int kontrol=0; //kullanıcı adı ve şifre kontrol edilmesinde, flag olarak kullanılmıştır
-	int girilenAdminSifresi, adminSifresi=123123; //Admin şifresi tanımlandı
-	int cevap1; //Ana Menü'deki if-else yapısı için tanımlanmıştır
-	char cevap2; //do-while yapısı için tanımlanmıştır
-	int cevap3=0; //Ana menü'den direkt olarak çıkış yapmak için(while döngülerine girmemek için) tanımlanmıştır.
-	struct HesapBilgileri hesap[50]; //50 tane hesap içerecek
-	int hesapNo; //giris yapıldıktan sonra kullanıcının sıra numarasını tutmak için tanımlanmıştır
+	int k; //switch-case yapÄ±sÄ± iÃ§in tanÄ±mlanmÄ±ÅŸtÄ±r.
+	int kontrol=0; //kullanÄ±cÄ± adÄ± ve ÅŸifre kontrol edilmesinde, flag olarak kullanÄ±lmÄ±ÅŸtÄ±r
+	int girilenAdminSifresi, adminSifresi=123123; //Admin ÅŸifresi tanÄ±mlandÄ±
+	int cevap1; //Ana MenÃ¼'deki if-else yapÄ±sÄ± iÃ§in tanÄ±mlanmÄ±ÅŸtÄ±r
+	char cevap2; //do-while yapÄ±sÄ± iÃ§in tanÄ±mlanmÄ±ÅŸtÄ±r
+	int cevap3=0; //Ana menÃ¼'den direkt olarak Ã§Ä±kÄ±ÅŸ yapmak iÃ§in(while dÃ¶ngÃ¼lerine girmemek iÃ§in) tanÄ±mlanmÄ±ÅŸtÄ±r.
+	struct HesapBilgileri hesap[50]; //program max. 50 tane hesap iÃ§erecek
+	int hesapNo; //giris yapÄ±ldÄ±ktan sonra kullanÄ±cÄ±nÄ±n sÄ±ra numarasÄ±nÄ± tutmak iÃ§in tanÄ±mlanmÄ±ÅŸtÄ±r
 	
-	hesap[0].bakiye = -1; // ilk hesabın boş olduğunu anlamak için bakiyesine -1 değeri atandı. 
+	hesap[0].bakiye = -1; // ilk hesabÄ±n boÅŸ olduÄŸunu anlamak iÃ§in bakiyesine -1 deÄŸeri atandÄ±. 
 	VeritabaniOku(hesap);
 	
 	printf("\n\t\t\t ================SEZGIN BANK===================\n");	
@@ -63,7 +63,7 @@ void main(){
 					scanf("%d", &secim);
 						switch(secim){
 							case 1:
-								//dosyadan bilgileri yazdır
+								//dosyadan bilgileri yazdÄ±r
 								HesapGoster(hesap);
 								printf("\nCikmak icin bir tusa basiniz:");
 								getch();
@@ -97,8 +97,8 @@ void main(){
 		}
 	}
 		
-	// for(;;) //Kullanıcı adı girişi için sonsuz döngü oluşturulmuştur
-	while(cevap3==0)	//Ana menü'de çıkış seçimi yapılırsa, döngülere girmeden direkt olarak program sonuna gidilmesi için while'a çevirildi.
+	// for(;;) //KullanÄ±cÄ± adÄ± giriÅŸi iÃ§in sonsuz dÃ¶ngÃ¼ oluÅŸturulmuÅŸtur
+	while(cevap3==0)	//Ana menÃ¼'de Ã§Ä±kÄ±ÅŸ seÃ§imi yapÄ±lÄ±rsa, dÃ¶ngÃ¼lere girmeden direkt olarak program sonuna gidilmesi iÃ§in while'a Ã§evirildi.
 	{
 		Sleep(1000);
 		system("CLS");
@@ -109,27 +109,19 @@ void main(){
 		scanf("%s %s", &adkontrol, &soyadkontrol);
 		printf("Lutfen 4 haneli sifrenizi giriniz:\n");
 		scanf("%s", &sifrekontrol);
-		printf("%s %s %s\n", &adkontrol, &soyadkontrol, &sifrekontrol);	//Debug icin kullandım...
-		for(j=0;j<50;j++){ //Kullanıcın Adı, Soyadı ve Şifresi sorgulanıyor...
+		printf("%s %s %s\n", &adkontrol, &soyadkontrol, &sifrekontrol);	//Debug icin kullandÄ±m...
+		for(j=0;j<50;j++){ //KullanÄ±cÄ±n AdÄ±, SoyadÄ± ve Åifresi sorgulanÄ±yor...
 					
 			char *ad=hesap[j].ad;
 			char *soyad=hesap[j].soyad;
 			char *sifre=hesap[j].sifre;
-			printf("%s %s %s\n", hesap[j].ad, hesap[j].soyad, hesap[j].sifre);
-				/*printf("Girilen deger: %s esit mi, veritabanindaki: %s\n", adkontrol[20], hesap[j].ad);
-				printf("Girilen deger: %s esit mi, veritabanindaki: %s\n", soyadkontrol[20], hesap[j].soyad);
-				printf("Girilen deger: %s esit mi, veritabanindaki: %s\n", sifrekontrol[20], hesap[j].sifre);*/
+			//printf("%s %s %s\n", hesap[j].ad, hesap[j].soyad, hesap[j].sifre);
 			getch();
 			fflush(stdin);
 			
 			int a = strcmp(adkontrol, ad);
 			int b = strcmp(soyadkontrol, soyad);
 			int c = strcmp(sifrekontrol, sifre);
-			
-			/* Bu kısım çalışmadı neden???	
-			int a = strcmp(adkontrol, hesap[j].ad);
-			int b = strcmp(soyadkontrol, hesap[j].soyad);
-			int c = strcmp(sifre, hesap[j].sifre);	*/
 			
 			if(a==0 && b==0 && c==0 ){
 				kontrol=1;
@@ -144,16 +136,16 @@ void main(){
 		}
 		
 
-		if(kontrol==0) //Kullanıcının girmiş olduğu kullanıcı adıyla, sistemde kayitli kullanıcı adının uyuşmaması halinde if komutu çalışır. 
+		if(kontrol==0) //KullanÄ±cÄ±nÄ±n girmiÅŸ olduÄŸu kullanÄ±cÄ± adÄ±yla, sistemde kayitli kullanÄ±cÄ± adÄ±nÄ±n uyuÅŸmamasÄ± halinde if komutu Ã§alÄ±ÅŸÄ±r. 
 		{ 	 
 			printf("\n Yanlis Giris Yaptiniz.\n");
 			printf(" Lutfen Tekrar Deneyiniz.\n");
 			printf("\n Lutfen Bekleyiniz...");
 			printf("\n");
-			continue; //Tekrar kullanici girisi -for- döngüsüne dön
+			continue; //Tekrar kullanici girisi -for- dÃ¶ngÃ¼sÃ¼ne dÃ¶n
 		}
          
-		else //Kullanıcının girmiş olduğu kullanıcı adıyla, sistemde kayitli kullanıcı adının uyuşması halinde else komutu çalışır.
+		else //KullanÄ±cÄ±nÄ±n girmiÅŸ olduÄŸu kullanÄ±cÄ± adÄ±yla, sistemde kayitli kullanÄ±cÄ± adÄ±nÄ±n uyuÅŸmasÄ± halinde else komutu Ã§alÄ±ÅŸÄ±r.
 		{   
 			printf("\n Kullanici adi ve sifreniz dogrulanmaktadir...");
 			Sleep(1500);
@@ -161,27 +153,21 @@ void main(){
 			printf("\n Kullanici adi ve sifresi dogrulandi...\n");
 			Sleep(1500);
 			system("CLS");
-			break; //for döngüsünden çıkış sağlanmaktadır.
+			break; //for dÃ¶ngÃ¼sÃ¼nden Ã§Ä±kÄ±ÅŸ saÄŸlanmaktadÄ±r.
 		}
 	}
 	
-   	//for(;;) //Kullanıcı şifresi doğrulandıktan sonra Menü işlemleri için sonsuz döngü oluşturulmuştur.
-   	while(cevap3==0)	//Ana menü'de çıkış seçimi yapılırsa, döngülere girmeden direkt olarak program sonuna gidilmesi için while'a çevirildi.
-	{ 
-			// Working With Structures --- Structures as Function Parameters konusu!!!			
+   	//for(;;) //KullanÄ±cÄ± ÅŸifresi doÄŸrulandÄ±ktan sonra MenÃ¼ iÅŸlemleri iÃ§in sonsuz dÃ¶ngÃ¼ oluÅŸturulmuÅŸtur.
+   	while(cevap3==0)	//Ana menÃ¼'de Ã§Ä±kÄ±ÅŸ seÃ§imi yapÄ±lÄ±rsa, dÃ¶ngÃ¼lere girmeden direkt olarak program sonuna gidilmesi iÃ§in while'a Ã§evirildi.
+	{ 		
 			char *ad = hesap[hesapNo].ad;
 			printf("\nHesap No: %d\n", hesapNo);
 			char *soyad = hesap[hesapNo].soyad;
 			char *sifre = hesap[hesapNo].sifre;
-			int *bakiye = &(hesap[hesapNo].bakiye);
-			//printf("\n %d - Ad:%s Soyad:%s Bakiye:%d\n", hesapNo, ad, soyad, bakiye);		//Debug için kullanıldı.
-			//printf("\n %d - Ad:%s Soyad:%s Bakiye:%d\n", hesapNo, ad, soyad, *bakiye);	//Debug için kullanıldı.
-			
-			
+			int *bakiye = &(hesap[hesapNo].bakiye);	
 			
 		    do
 		    {
-				//Menu: //goto fonksiyonu için kullanılmıştır.
 				printf("Sayin %s %s, Sezgin Bank\'a Hos Geldiniz...\n\n", ad, soyad);
 				//printf("\n%s %s %d", ad, soyad, bakiye);
 				printf(" ISLEM MENUSU\n");
@@ -197,7 +183,7 @@ void main(){
 				printf("\n");
 				switch(k)
 				{  					
-					case 1: //Hesap bakiyesi görüntüleme.
+					case 1: //Hesap bakiyesi gÃ¶rÃ¼ntÃ¼leme.
 						system("CLS");
 						printf("\n Hesap Bakiyesi Goruntuleme");
 						printf("\n --------------------------");
@@ -205,13 +191,12 @@ void main(){
 						printf("\n\n");
 						break;
 	
-					case 2: //Hesaba para yatırma.
+					case 2: //Hesaba para yatÄ±rma.
 						system("CLS");
 						printf("\n Hesaba Para Yatirma");
 						printf("\n ===================");
 						printf("\n\n Hesabiniza Yatacak Para Tutarini Giriniz:");
 						scanf("%d",&yatanPara);
-						//hesap[hesapNo].bakiye += yatanPara;
 						*bakiye += yatanPara;
 						VeritabaniGuncelle(hesap);
 						printf(" Hesabiniza Yatan Para: %d TL \n\n", yatanPara);
@@ -219,7 +204,7 @@ void main(){
 						printf("\n\n");
 						break;
 	
-					case 3: //Hesaptan para çekme.
+					case 3: //Hesaptan para Ã§ekme.
 						while(1)
 						{	
 							system("CLS");
@@ -247,7 +232,7 @@ void main(){
 						printf("\n\n");
 						break;
 	
-					case 4: //Para gönderme.
+					case 4: //Para gÃ¶nderme.
 						while(1)
 						{	
 							system("CLS");
@@ -271,35 +256,34 @@ void main(){
 								Sleep(2000);
 								continue;
 							}
-	
 						}
 						printf("\n\n");
 						break;
 						
-					case 5: //Banka sisteminden çıkış yapma.
+					case 5: //Banka sisteminden Ã§Ä±kÄ±ÅŸ yapma.
 						system("CLS");
 						printf("\n");
 						printf("Cikis yapiliyor...\n\n");
-						cevap2='H';  //Başka işlem yapmak istiyor musun? 'H': Hayır
+						cevap2='H';  //BaÅŸka iÅŸlem yapmak istiyor musun? 'H': HayÄ±r
 						break;
 							       
-					default: //Kullanıcının 1-2-3-4-5 dışında bir seçenek girmesi halide default yapısı çalışır.
+					default: //KullanÄ±cÄ±nÄ±n 1-2-3-4-5 dÄ±ÅŸÄ±nda bir seÃ§enek girmesi halinde default yapÄ±sÄ± Ã§alÄ±ÅŸÄ±r.
 						system("CLS");
 						printf("\n Boyle Bir Islem Secenegi Yoktur.\n");
 						printf("\n");
 						break;
 				} 
 			
-				if(k==5) //döngüden, yani banka otomasyonundan çıkmak için kurulmuştur.
+				if(k==5) //dÃ¶ngÃ¼den, yani banka otomasyonundan Ã§Ä±kmak iÃ§in kurulmuÅŸtur.
 					break;
 				else{
 					printf(" Baska Islem Yapmak Istiyor Musunuz? ( (E)vet - (H)ayir )");
-					cevap2=getch(); //Kullanıcının cevabı cevap değişkenine aktarılmaktadır.		
+					cevap2=getch(); //KullanÄ±cÄ±nÄ±n cevabÄ± cevap2 deÄŸiÅŸkenine aktarÄ±lmaktadÄ±r.		
 					system("CLS");
 					printf("\n");
 				}
-			}while(cevap2=="E" || cevap2=="e"); // 'E' veya 'e' olması halinde menü ekrana gelecektir.
-		if(cevap2=='H' || cevap2=='h') //'H' veya 'h' olması halinde döngüden çıkılacak ve çıkış işlemi gerçekleşecektir.
+			}while(cevap2=="E" || cevap2=="e"); // 'E' veya 'e' olmasÄ± halinde menÃ¼ ekrana gelecektir.
+		if(cevap2=='H' || cevap2=='h') //'H' veya 'h' olmasÄ± halinde dÃ¶ngÃ¼den Ã§Ä±kÄ±lacak ve Ã§Ä±kÄ±ÅŸ iÅŸlemi gerÃ§ekleÅŸecektir.
 			break;
 	}
 	
@@ -311,12 +295,12 @@ void main(){
 	Sleep(3000);
 	system("CLS");
 	printf("\n Programi Kapatmak Icin Bir Tusa Basiniz.");
-	getch(); //Herhangi bir tuşa basıldığında program kapanacaktır.	
+	getch();
 	return 0;
 }
 
 
-//Admin hesabıyla giriş yapıldığında; Programın başında VeritabaniOku fonksiyonu ile hafızaya alınan tüm hesap bilgilerini konsola yazdırmak için tanımlandı
+//Admin hesabÄ±yla giriÅŸ yapÄ±ldÄ±ÄŸÄ±nda; ProgramÄ±n baÅŸÄ±nda VeritabaniOku fonksiyonu ile hafÄ±zaya alÄ±nan tÃ¼m hesap bilgilerini konsola yazdÄ±rmak iÃ§in tanÄ±mlandÄ±
 void HesapGoster(struct HesapBilgileri *hesap){
 	int i;
 	printf("    \t    AD\t\t     SOYAD\t    SIFRE\t  BAKIYE");
@@ -328,7 +312,7 @@ void HesapGoster(struct HesapBilgileri *hesap){
 	}
 }
 
-//BankaVeritabani.txt dosyasına yeni hesap bilgileri girişi yapmak için tanımlandı
+//BankaVeritabani.txt dosyasÄ±na yeni hesap bilgileri giriÅŸi yapmak iÃ§in tanÄ±mlandÄ±
 void HesapEkle(struct HesapBilgileri *hesap){
 	FILE *HedefDosya = fopen("BankaVeritabani.txt", "a+");
 	int i;
@@ -349,8 +333,8 @@ void HesapEkle(struct HesapBilgileri *hesap){
 	fclose(HedefDosya);
 }
 
-/*Programın açılışında, BankaVeritabani.txt'de kayıtlı olan tüm hesapları okumak için tanımlandı.End of file görene kadar okuyor. Son elemanı bitirdiğinde en son hesap numarasının 
-bir ilerisine(yani henüz boş olan bakiye değerini -1 atıyor. Yani HesapEkle çalıştırılırsa, hesap struct'ının hangi index'ine tanımlama yapılacağı belirlenmiş oluyor.*/
+/*ProgramÄ±n aÃ§Ä±lÄ±ÅŸÄ±nda, BankaVeritabani.txt'de kayÄ±tlÄ± olan tÃ¼m hesaplarÄ± okumak iÃ§in tanÄ±mlandÄ±.End of file gÃ¶rene kadar okuyor. Son elemanÄ± bitirdiÄŸinde en son hesap numarasÄ±nÄ±n 
+bir ilerisine(yani henÃ¼z boÅŸ olan bakiye deÄŸerini -1 atÄ±yor. Yani HesapEkle Ã§alÄ±ÅŸtÄ±rÄ±lÄ±rsa, hesap struct'Ä±nÄ±n hangi index'ine tanÄ±mlama yapÄ±lacaÄŸÄ± belirlenmiÅŸ oluyor.*/
 void VeritabaniOku(struct HesapBilgileri *hesap){
 	FILE *HedefDosya = fopen("BankaVeritabani.txt", "r+");
 	if(HedefDosya == NULL)
@@ -366,7 +350,7 @@ void VeritabaniOku(struct HesapBilgileri *hesap){
 	fclose(HedefDosya);
 }
 
-/*Bakiye bilgisini değiştirecek bir işlem yapıldıktan sonra veri güncellemek için; hafızadaki tüm bilgileri, Veritabani.txt dosyasını yeniden açıp yazmak için tanımlandı*/
+/*Bakiye bilgisini deÄŸiÅŸtirecek bir iÅŸlem yapÄ±ldÄ±ktan sonra veri gÃ¼ncellemek iÃ§in; hafÄ±zadaki tÃ¼m bilgileri, Veritabani.txt dosyasÄ±nÄ± yeniden aÃ§Ä±p yazmak iÃ§in tanÄ±mlandÄ±*/
 void VeritabaniGuncelle(struct HesapBilgileri *hesap){
 	FILE *HedefDosya = fopen("BankaVeritabani.txt", "w");
 	int a;
